@@ -45,24 +45,13 @@
 </div>
 <div class="handoff-demo">
 <div class="house-scene"><span class="demo-context">Illustrative match preview</span>
-<svg viewBox="0 0 560 280" role="img" aria-label="Architectural illustration of a house with a pitched roof, front garden, and warmly lit windows">
-<path d="M0 240H560M0 260H560" stroke="currentColor" opacity=".12"/>
-<circle cx="452" cy="62" r="29" fill="currentColor" opacity=".08"/>
-<path d="M75 227V118L218 42 360 118V227Z" fill="#302e29"/><path d="M218 42L360 118H475V227H360V118Z" fill="#242522"/>
-<path d="M58 124L218 38 372 122M360 118H485" fill="none" stroke="#b7b5a5" stroke-width="5"/>
-<path d="M96 226V132L217 68 338 132V226Z" fill="#68685c"/>
-<path d="M127 139H186V194H127ZM244 139H306V194H244ZM383 145H446V197H383Z" fill="#d8c9a4"/>
-<path d="M155 139V194M127 168H186M275 139V194M244 168H306M414 145V197" stroke="#494a43" stroke-width="4"/>
-<path d="M199 161H232V227H199Z" fill="#343b35"/><path d="M199 229L178 280H265L232 229" fill="#7a786b" opacity=".6"/>
-<path d="M42 236Q47 192 75 215Q92 183 119 221Q139 209 150 236ZM319 236Q328 194 352 216Q375 184 394 220Q420 191 440 219Q476 196 496 236Z" fill="#414c40"/>
-<path d="M44 238H503" stroke="#969584" stroke-width="2"/>
-</svg></div>
+<img src="assets/mustwants-house.webp" width="2000" height="1329" alt="House from the MustWants case study, with an illuminated front porch at dusk" loading="lazy"></div>
 <div class="match-content"><div class="match-heading"><h3>A place that fits.</h3><span class="match-percent">85%<small>compatibility</small></span></div>
 <p class="match-summary">Your musts, met. Your wants, considered.</p>
 <ul class="match-requirements"><li><span aria-hidden="true">✓</span> Essential requirements met</li><li><span aria-hidden="true">✓</span> Ready for an agent introduction</li></ul>
 <button class="chip" id="handoff-button" aria-expanded="false" aria-controls="handoff-result">Preview the handoff <span aria-hidden="true">→</span></button>
 <div id="handoff-result" hidden><strong>Time to meet the house.</strong><p>A licensed real estate agent helps arrange the walkthrough. No appointment is booked in this demonstration.</p></div>
-<p class="match-note">85% is the proposed handoff threshold in this concept.</p></div>
+</div>
 </div>
 </div>
 <dl class="mustwants-results" aria-label="MustWants results"><div><dt>40%</dt><dd>reduction in search time against a 3–4.5 month baseline</dd></div><div><dt>35%</dt><dd>increase in active interaction with recommendations</dd></div><div><dt>20%</dt><dd>faster agent offer submissions</dd></div></dl>
@@ -88,7 +77,7 @@
 <aside class="workflow-bridge"><h3>Figma</h3><span>Optional collaboration bridge</span><p>Bring in team assets and exchange token specs with the repository.</p><span class="workflow-sync">↕ <span>Sync / handshake</span></span></aside>
 <ol class="workflow-stages">
 <li><div class="stage-heading"><span>Brief</span><h3>Repository</h3></div><p>The source of truth for tokens, components, and accessibility rules.</p><small>spec.md · Tailwind tokens<br>.cursor/rules/</small></li>
-<li><div class="stage-heading"><span>Variants</span><h3>Cursor</h3></div><p>Direct Composer to explore UI variations against the brief. Explore a future v0 handoff for React primitives.</p><small>Composer · v0 CLI<br>Shared repository specs</small></li>
+<li><div class="stage-heading"><span>Variants</span><h3>Cursor / Codex</h3></div><p>Direct Composer to explore UI variations against the brief. Explore a future v0 handoff for React primitives.</p><small>Composer · v0 CLI<br>Shared repository specs</small></li>
 <li><div class="stage-heading"><span>Live UI</span><h3>Next.js</h3></div><p>Test streaming, fallback states, and human decisions in working interfaces.</p><small>App Router · Variant A / B<br>Git branches → handoff</small></li>
 <li><div class="stage-heading"><span>Review</span><h3>Devin</h3></div><p>Planned: background browser QA and shared previews for team review.</p><small>Playwright · Vercel previews<br>Human review before release</small></li>
 </ol>
