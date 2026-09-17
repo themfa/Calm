@@ -913,3 +913,9 @@ main>.closing { display:flex; align-items:center; }
 .workflow-stages li:not(:last-child)::after { content:none; }
 @media(max-width:1000px) { .workflow-stages { grid-template-columns:repeat(2,minmax(0,1fr)); } }
 @media(max-width:540px) { .workflow-stages { grid-template-columns:1fr; } }
+
+.cockpit-flow { margin:32px 0; min-width:0; }
+.cockpit-flow h3 { font-size:24px; margin-bottom:12px; }
+.cockpit-flow>p { color:var(--text-secondary); max-width:70ch; font-size:16px; }
+.cockpit-flow pre { overflow-x:auto; max-width:100%; padding:24px; border:1px solid var(--border-subtle); border-radius:12px; background:var(--surface-raised); color:var(--text-primary); font:13px/1.7 var(--font-display); white-space:pre; }
+.cockpit-flow pre:focus-visible { outline:2px solid var(--focus); outline-offset:4px; }

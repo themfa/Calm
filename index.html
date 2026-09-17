@@ -79,12 +79,42 @@
 <li><div class="stage-heading"><span>Review</span><h3>Devin</h3></div><p>Planned: background browser QA and shared previews for team review.</p><small>Playwright · Vercel previews<br>Human review before release</small></li>
 </ol>
 </div>
-<details class="workflow-details"><summary class="button mood-cta">Explore my tools and workflow details</summary><div class="cockpit-reference"><div><h3>Cheat sheet</h3><dl class="cockpit-cheats"><div><dt>Candidate profile</dt><dd>Senior AI-Native Design Engineer / Lead Product Designer</dd></div><div><dt>Core philosophy</dt><dd>Explore in design tools, test in working code, and keep the team aligned through shared specs and design tokens.</dd></div><div><dt>Central stack</dt><dd>Cursor, Next.js, React, Tailwind CSS, and Figma; exploring v0, Devin, and Linear handoffs.</dd></div><div><dt>Workflow</dt><dd>Define the brief in <code>spec.md</code>, build interface variations, and review them in the browser. Automated agent handoffs are still being set up.</dd></div><div><dt>Business impact</dt><dd>Test decisions earlier in live previews, with the goal of shortening design-to-engineering iteration.</dd></div></dl></div>
+<details class="workflow-details"><summary class="button mood-cta">Explore my tools and workflow details</summary><section class="cockpit-flow" aria-labelledby="cockpit-flow-title"><h3 id="cockpit-flow-title">Full Flow: Code-Native Cockpit</h3><p>Figma as an optional bridge. Target workflow; branch names are examples and automated handoffs are not yet connected.</p><pre tabindex="0" aria-label="Code-native workflow with Markdown documents at each stage">[ CODE REPOSITORY / SOURCE OF TRUTH ] &lt;-- Sync / Handshake --&gt; [ FIGMA ]
+|  spec.md              Product intent and acceptance criteria  Optional
+|  AGENTS.md            Agent rules and implementation context  team bridge
+|  DESIGN.md            Design reference
+|  styles.css           Personal tokens / Tailwind mapping
+|
+v
+[ CURSOR / CODEX / CENTRAL COCKPIT ]
+|  workflow/task-template.md   Scope, constraints, deliverables
+|  Cursor Composer            Explore interface variants
+|  workflow/v0-brief.md        Brief for optional v0 generation
+|  Integrated terminal        Optional v0 CLI handoff
+|
+v
+[ NEXT.JS APP ROUTER / STREAMING + STATE ]
+|  Variant A: feat/feed-vertical
+|  Variant B: feat/feed-horizontal
+|  spec.md                    Check both against acceptance criteria
+|
+|  Git push / branch + reviewable handoff
+v
+[ DEVIN / BACKGROUND CLOUD AGENT ]
+|  workflow/devin-qa.md        QA scope, browser checks, evidence
+|  Playwright                 Desktop / mobile QA
+|  Preview URLs               Share the tested build
+|
+v
+[ HUMAN REVIEW / RELEASE ]
+   workflow/README.md         Handoff and release guidance
+   Paul reviews the result before release
+</pre><a class="work-visit" href="assets/code-native-cockpit.md" download>Download workflow .md ↓</a></section><div class="cockpit-reference"><div><h3>Cheat sheet</h3><dl class="cockpit-cheats"><div><dt>Candidate profile</dt><dd>Senior AI-Native Design Engineer / Lead Product Designer</dd></div><div><dt>Core philosophy</dt><dd>Explore in design tools, test in working code, and keep the team aligned through shared specs and design tokens.</dd></div><div><dt>Central stack</dt><dd>Cursor, Next.js, React, Tailwind CSS, and Figma; exploring v0, Devin, and Linear handoffs.</dd></div><div><dt>Workflow</dt><dd>Define the brief in <code>spec.md</code>, build interface variations, and review them in the browser. Automated agent handoffs are still being set up.</dd></div><div><dt>Business impact</dt><dd>Test decisions earlier in live previews, with the goal of shortening design-to-engineering iteration.</dd></div></dl></div>
 <aside class="cockpit-tools" aria-labelledby="tool-list-title"><h3 id="tool-list-title">Tool list</h3><ul><li>Figma</li><li>Pen.dev</li><li>Framer</li><li>Three.js</li><li>Cursor</li><li>Codex</li><li>Claude</li><li>v0 (Vercel)</li><li>Uizard / UiMagic</li><li>Conductor</li><li>Linear</li><li>GitHub</li></ul></aside></div></details>
 </section>
 <section class="section prototype-section full-band" aria-labelledby="prototype-title">
 <div class="concept calm-prototype" id="calm-prototype">
-<div class="concept-copy"><p class="concept-eyebrow">My Calm - 5 Min Exploration</p><h2 id="prototype-title">A coach you shape.<br>A moment you choose.</h2><p>A configurable wellbeing companion, guided by your preferences and the spaces you choose to connect.</p><p>Your Coach Profile holds the guidance, preferences, and boundaries you choose. Edit it, and the routine changes with you—without writing code. The idea borrows from SKILL.md: a readable set of instructions that shapes how an agent behaves.</p><ul class="principles"><li><strong>You set the tone.</strong><span>Choose quiet company or gentle guidance.</span></li><li><strong>Your space joins in.</strong><span>Preview a routine across connected devices, from bedroom lights to car interior lighting, then choose when to start.</span></li><li><strong>It learns what you choose.</strong><span>“Less talking” and “Keep it brighter” update the profile you control.</span></li></ul><a class="work-visit" href="#my-calm-demo">Try My Calm prototype →</a></div>
+<div class="concept-copy"><p class="concept-eyebrow">My Calm - Color Therapy - 5min Exploration</p><h2 id="prototype-title">Personalized Therapy.<br>The user is back in control</h2><p>At Credit Karma, I turned financial paralysis into actionable agency. Bringing that fintech playbook to Calm means using personalized audio to give users immediate, hands-on control over panic.</p><p>Your Coach Profile holds the guidance, preferences, and boundaries you choose. Edit it, and the routine changes with you—without writing code. The idea borrows from SKILL.md: a readable set of instructions that shapes how an agent behaves.</p><ul class="principles"><li><strong>You set the tone.</strong><span>Choose quiet company or gentle guidance.</span></li><li><strong>Your space joins in.</strong><span>Preview a routine across connected devices, from bedroom lights to car interior lighting, then choose when to start.</span></li><li><strong>It learns what you choose.</strong><span>“Less talking” and “Keep it brighter” update the profile you control.</span></li></ul><a class="work-visit" href="#my-calm-demo">Try My Calm prototype →</a></div>
 <div id="my-calm-demo" tabindex="-1" class="phone my-calm" aria-label="Interactive My Calm concept">
 <div class="coach-top"><span>My Calm</span><button class="coach-edit" id="edit-coach" aria-expanded="false" aria-controls="coach-profile">Edit my profile</button></div>
 
