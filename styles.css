@@ -821,7 +821,7 @@ main>.judgment-section{width:min(1040px,calc(100% - 64px));padding-block:56px}
 .workflow-details summary { cursor:pointer; padding:20px 0; min-height:44px; font-size:18px; }
 .workflow-details .cockpit-reference { border-top:0; padding-top:12px; }
 .workflow-target { color:var(--text-secondary); font-size:14px; margin:32px 0 16px; }
-.my-calm .coach-feedback-help { font-size:14px; line-height:1.5; margin:-8px 0 16px; }
+.my-calm .coach-feedback-help { font-size:14px; line-height:1.5; margin:24px 0 16px; }
 .exploration-feature .exploration-visit, .exploration-notes a { min-height:44px; display:inline-flex; align-items:center; }
 
 /* Work destinations and closing atmosphere. */
@@ -853,3 +853,32 @@ main>.closing { display:flex; align-items:center; }
 .closing p { margin-bottom:0; }
 .closing>.button { flex-shrink:0; }
 @media(max-width:767px) { main>.closing { flex-direction:column; justify-content:center; align-items:flex-start; } .closing>.button { margin-top:0; } }
+
+/* Preference outlines share the inherited CTA color cycle. */
+.my-calm .coach-feedback .chip {
+ position:relative;
+ border:2px solid transparent;
+ background:transparent;
+ color:#fff;
+}
+.my-calm .coach-feedback .chip::before {
+ content:"";
+ position:absolute;
+ inset:-2px;
+ border-radius:inherit;
+ padding:2px;
+ background:linear-gradient(115deg,var(--mood-a),var(--mood-b));
+ -webkit-mask:linear-gradient(#fff 0 0) content-box,linear-gradient(#fff 0 0);
+ -webkit-mask-composite:xor;
+ mask:linear-gradient(#fff 0 0) content-box,linear-gradient(#fff 0 0);
+ mask-composite:exclude;
+ pointer-events:none;
+}
+.my-calm .coach-feedback .chip:hover { background:rgba(255,255,255,.08); }
+.my-calm .coach-feedback .chip[aria-pressed="true"] {
+ background:linear-gradient(115deg,var(--mood-a),var(--mood-b));
+ border-color:transparent;
+ color:#172338;
+}
+
+.product-story > .button.mood-cta { margin-top:20px; }
