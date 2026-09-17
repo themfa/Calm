@@ -44,13 +44,11 @@
 <div><h3>The handoff</h3><p>A promising match becomes a real conversation. An agent steps in to help arrange a walkthrough.</p></div>
 </div>
 <div class="handoff-demo">
-<div class="house-scene"><span class="demo-context">Illustrative match preview</span>
+<div class="house-scene">
 <img src="assets/mustwants-house.webp" width="2000" height="1329" alt="House from the MustWants case study, with an illuminated front porch at dusk" loading="lazy"></div>
 <div class="match-content"><div class="match-heading"><h3>A place that fits.</h3><span class="match-percent">85%<small>compatibility</small></span></div>
 <p class="match-summary">Your musts, met. Your wants, considered.</p>
 <ul class="match-requirements"><li><span aria-hidden="true">✓</span> Essential requirements met</li><li><span aria-hidden="true">✓</span> Ready for an agent introduction</li></ul>
-<button class="chip" id="handoff-button" aria-expanded="false" aria-controls="handoff-result">Preview the handoff <span aria-hidden="true">→</span></button>
-<div id="handoff-result" hidden><strong>Time to meet the house.</strong><p>A licensed real estate agent helps arrange the walkthrough. No appointment is booked in this demonstration.</p></div>
 </div>
 </div>
 </div>
@@ -109,7 +107,6 @@
 <script src="cover-director.js" defer></script>
 <script src="my-calm.js" defer></script>
 <script>
-document.getElementById('handoff-button').addEventListener('click',event=>{const open=event.currentTarget.getAttribute('aria-expanded')!=='true';event.currentTarget.setAttribute('aria-expanded',String(open));event.currentTarget.textContent=open?'Close the preview':'Preview the handoff';document.getElementById('handoff-result').hidden=!open;});
 let printStates=[];window.addEventListener('beforeprint',()=>{printStates=[...document.querySelectorAll('details')].map(el=>el.open);document.querySelectorAll('details').forEach(el=>el.open=true)});window.addEventListener('afterprint',()=>{document.querySelectorAll('details').forEach((el,i)=>el.open=printStates[i]??true)});
 </script>
 </body></html>
