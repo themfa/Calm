@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width,initial-scale=1" />
+<title>Credit Karma — Goals</title>
+<style>
+:root{
+  --paper:#fff;--ink:#111;--chip:#dcefe0;--mute:#f0f0f0;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html,body{height:100%;background:#0d0c0b}
+body{display:flex;align-items:center;justify-content:center;font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;color:var(--ink);-webkit-font-smoothing:antialiased}
+.phone{width:390px;height:844px;background:var(--paper);border-radius:38px;overflow:hidden;position:relative}
+.status{height:44px;display:flex;align-items:center;justify-content:space-between;padding:0 22px;font-size:13px;font-weight:600}
+.status .sig{display:flex;gap:5px;align-items:center}
+.status .sig i{width:4px;height:8px;background:var(--ink);border-radius:1px}
+.status .sig i:nth-child(2){height:11px}
+.status .sig i:nth-child(3){height:14px}
+.status .batt{width:22px;height:11px;border:1.4px solid var(--ink);border-radius:3px;position:relative}
+.status .batt::after{content:"";position:absolute;left:2px;top:2px;bottom:2px;width:12px;background:var(--ink);border-radius:1px}
+.pad{padding:8px 20px 0}
+.back{width:28px;height:28px;display:grid;place-items:center;margin-bottom:18px}
+.back svg{width:18px;height:18px;stroke:var(--ink);fill:none;stroke-width:2.2}
+h1{font-size:36px;font-weight:800;letter-spacing:-.04em;line-height:1;margin-bottom:8px}
+.lede{font-size:16px;font-weight:400;margin-bottom:28px}
+h2{font-size:17px;font-weight:700;letter-spacing:-.02em;margin:0 0 14px}
+.chip{display:inline-flex;align-items:center;padding:14px 18px;border-radius:999px;font-size:16px;font-weight:600;margin:0 10px 28px 0}
+.chip.on{background:var(--chip)}
+.chip.off{background:var(--mute)}
+.row{display:flex;flex-wrap:wrap;gap:10px;margin-bottom:8px}
+html[data-ck-cover],html[data-ck-cover] body{background:var(--paper)!important;margin:0;padding:0;height:100%;overflow:hidden;display:block}
+html[data-ck-cover] .phone{border-radius:0}
+</style>
+<script>if(/[?&]cover=1(?:&|$)/.test(location.search))document.documentElement.setAttribute("data-ck-cover","1")</script>
+</head>
+<body>
+<div class="phone">
+  <div class="status"><span>12:22</span><span class="sig"><i></i><i></i><i></i><span class="batt"></span></span></div>
+  <div class="pad">
+    <div class="back" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M15 5 8 12l7 7"/></svg></div>
+    <h1>Goals</h1>
+    <p class="lede">Select all that apply</p>
+    <h2>Suggested goals based on your profile</h2>
+    <span class="chip on">Pay off credit card debt</span>
+    <h2>Additional goals</h2>
+    <div class="row">
+      <span class="chip off">Save for retirement</span>
+      <span class="chip off">Create a budget</span>
+    </div>
+  </div>
+</div>
+</body>
+</html>

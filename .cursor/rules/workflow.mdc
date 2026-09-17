@@ -1,0 +1,8 @@
+---
+description: Calm design direction, implementation boundaries, and verification
+alwaysApply: true
+---
+Read AGENTS.md, spec.md, DESIGN.md, and workflow/README.md before changes.
+Follow spec.md's token authority: styles.css controls the personal page theme; DESIGN.md is the Calm specimen.
+Use existing semantic tokens, preserve factual claims, and verify keyboard/mobile behavior.
+Use workflow/task-template.md for task handoffs. State tested integration status accurately.

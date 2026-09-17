@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width,initial-scale=1" />
+<title>Credit Karma — Score</title>
+<style>
+:root{
+  --field:#165c32;--paper:#fff;--ink:#111;--mute:#3a3a3a;--line:#2ea043;--star:#2ea043;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html,body{height:100%;background:#0d0c0b}
+body{display:flex;align-items:center;justify-content:center;font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;color:#fff;-webkit-font-smoothing:antialiased}
+.phone{width:390px;height:844px;background:var(--field);border-radius:38px;overflow:hidden;position:relative}
+.status{height:44px;display:flex;align-items:center;justify-content:space-between;padding:0 22px;font-size:13px;font-weight:600}
+.status .sig{display:flex;gap:5px;align-items:center}
+.status .sig i{width:4px;height:8px;background:#fff;border-radius:1px}
+.status .sig i:nth-child(2){height:11px}
+.status .sig i:nth-child(3){height:14px}
+.status .batt{width:22px;height:11px;border:1.4px solid #fff;border-radius:3px;position:relative}
+.status .batt::after{content:"";position:absolute;left:2px;top:2px;bottom:2px;width:12px;background:#fff;border-radius:1px}
+.pad{padding:4px 16px 0}
+.tools{display:flex;justify-content:flex-end;gap:16px;margin-bottom:18px}
+.tools svg{width:22px;height:22px;stroke:#fff;fill:none;stroke-width:1.8}
+.rail{display:flex;gap:12px;align-items:stretch}
+.card{flex:0 0 78%;background:var(--paper);color:var(--ink);border-radius:18px;padding:18px 18px 14px;position:relative}
+.card h2{font-size:16px;font-weight:600;letter-spacing:-.02em}
+.star{position:absolute;top:16px;right:16px;width:22px;height:22px;fill:var(--star)}
+.score{font-size:64px;font-weight:800;letter-spacing:-.05em;line-height:1;margin:10px 0 6px}
+.meta{font-size:14px;font-weight:500;margin-bottom:12px}
+svg.chart{width:100%;height:72px;display:block}
+.axis{display:flex;justify-content:space-between;margin-top:6px;font-size:11px;color:var(--mute)}
+.peek{flex:1;background:var(--paper);border-radius:18px 0 0 18px;min-height:220px}
+html[data-ck-cover],html[data-ck-cover] body{background:var(--field)!important;margin:0;padding:0;height:100%;overflow:hidden;display:block}
+html[data-ck-cover] .phone{border-radius:0}
+</style>
+<script>if(/[?&]cover=1(?:&|$)/.test(location.search))document.documentElement.setAttribute("data-ck-cover","1")</script>
+</head>
+<body>
+<div class="phone">
+  <div class="status"><span>12:22</span><span class="sig"><i></i><i></i><i></i><span class="batt"></span></span></div>
+  <div class="pad">
+    <div class="tools" aria-hidden="true">
+      <svg viewBox="0 0 24 24"><path d="M15 17h5l-1.4-1.4A2 2 0 0 1 18 14.2V11a6 6 0 1 0-12 0v3.2c0 .5-.2 1-.6 1.4L4 17h5"/><path d="M10 17a2 2 0 0 0 4 0"/></svg>
+      <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="3"/><path d="M19.4 15a1.7 1.7 0 0 0 .3 1.8l.1.1a2 2 0 1 1-2.8 2.8l-.1-.1a1.7 1.7 0 0 0-1.8-.3 1.7 1.7 0 0 0-1 1.5V21a2 2 0 1 1-4 0v-.1a1.7 1.7 0 0 0-1-1.5 1.7 1.7 0 0 0-1.8.3l-.1.1a2 2 0 1 1-2.8-2.8l.1-.1a1.7 1.7 0 0 0 .3-1.8 1.7 1.7 0 0 0-1.5-1H3a2 2 0 1 1 0-4h.1a1.7 1.7 0 0 0 1.5-1 1.7 1.7 0 0 0-.3-1.8l-.1-.1a2 2 0 1 1 2.8-2.8l.1.1a1.7 1.7 0 0 0 1.8.3H9a1.7 1.7 0 0 0 1-1.5V3a2 2 0 1 1 4 0v.1a1.7 1.7 0 0 0 1 1.5 1.7 1.7 0 0 0 1.8-.3l.1-.1a2 2 0 1 1 2.8 2.8l-.1.1a1.7 1.7 0 0 0-.3 1.8V9c.3.6.9 1 1.5 1H21a2 2 0 1 1 0 4h-.1a1.7 1.7 0 0 0-1.5 1z"/></svg>
+    </div>
+    <div class="rail">
+      <article class="card">
+        <h2>TransUnion credit score</h2>
+        <svg class="star" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2.5 14.7 9l6.8.6-5.2 4.5 1.6 6.6L12 17.2 6.1 20.7l1.6-6.6L2.5 9.6 9.3 9z"/></svg>
+        <p class="score">638</p>
+        <p class="meta">+2 pts today · Fair</p>
+        <svg class="chart" viewBox="0 0 240 72" fill="none" aria-hidden="true">
+          <path d="M4 40 C 28 42, 40 52, 58 48 S 90 22, 112 26 S 150 18, 172 16 S 210 28, 236 24" stroke="var(--line)" stroke-width="3"/>
+        </svg>
+        <div class="axis"><span>Nov 2021</span><span>Dec 2021</span><span>Jan 2022</span><span>Feb 2022</span></div>
+      </article>
+      <div class="peek" aria-hidden="true"></div>
+    </div>
+  </div>
+</div>
+</body>
+</html>

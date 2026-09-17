@@ -1,0 +1,12 @@
+/* Keep the legacy page's reset and tokens; enable Tailwind for new React components. */
+@layer theme, base, components, utilities;
+@import "tailwindcss/theme.css" layer(theme);
+@import "tailwindcss/utilities.css" layer(utilities);
+@source "./**/*.{ts,tsx}";
+@theme inline {
+  --color-surface: var(--surface-base);
+  --color-foreground: var(--text-primary);
+  --color-muted: var(--text-secondary);
+  --font-sans: var(--font);
+  --font-mono: var(--font-display);
+}

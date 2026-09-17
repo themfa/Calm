@@ -1,0 +1,15 @@
+node_modules/
+.next/
+public/
+.env*
+!.env.example
+.DS_Store
+*.tsbuildinfo
+playwright-report/
+test-results/
+.conductor/settings.local.toml
+.context/
+.vercel
+
+Untitled/
+.vercel/
