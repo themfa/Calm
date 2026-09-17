@@ -739,8 +739,9 @@ main>.workflow-section { width:min(1120px,calc(100% - 64px)); }
  --text-secondary:#dce1ec;
  background:linear-gradient(155deg,var(--mood-top),var(--mood-bottom) 75%);
  border-color:color-mix(in srgb,var(--mood-a) 45%,#34425a);
- animation:calm-mood-ring 120s linear infinite;
+
 }
+:root { animation:calm-mood-ring 120s linear infinite; }
 @keyframes calm-mood-ring {
  0%,100% { --mood-top:#1b4356; --mood-bottom:#242440; --mood-a:#6cdae5; --mood-b:#7e80ef; }
  12.5% { --mood-top:#253d60; --mood-bottom:#312647; --mood-a:#7faef2; --mood-b:#ac7bed; }
@@ -755,7 +756,7 @@ main>.workflow-section { width:min(1120px,calc(100% - 64px)); }
 .my-calm .coach-feedback .chip[aria-pressed="true"] { background:var(--mood-a); color:#172338; border-color:var(--mood-a); }
 .my-calm .routine-devices span { color:#dce1ec; }
 .my-calm .coach-profile select { background:var(--mood-bottom); }
-@media(prefers-reduced-motion:reduce){.calm-prototype .my-calm{animation:none}}
+@media(prefers-reduced-motion:reduce){:root{animation:none}}
 
 /* Live Jane onboarding uses its own mobile layout inside the frame. */
 .jane-live { width:100%; max-width:390px; margin:0 auto; }
@@ -839,3 +840,10 @@ main>.closing { position:relative; isolation:isolate; width:100%; border:0; padd
 .closing .hero-film { inset:0; }
 .closing .hero-film::after { background:linear-gradient(to bottom,var(--surface-base),transparent 35%,#000 100%),linear-gradient(to right,rgba(0,0,0,.85),rgba(0,0,0,.6) 56%,rgba(0,0,0,.3)); }
 @media(max-width:767px) { main>.closing { width:100%; padding:64px 20px; } }
+
+/* The five primary work actions inherit the same mood colors as My Calm. */
+.button.mood-cta { background:linear-gradient(115deg,var(--mood-a),var(--mood-b)); color:#172338; border:0; border-radius:var(--radius-pill); min-height:52px; padding:12px 28px; font-size:16px; text-align:center; white-space:normal; max-width:100%; justify-self:start; }
+.button.mood-cta:hover { color:#172338; filter:brightness(1.08); text-decoration:none; }
+.button.mood-cta:active { filter:brightness(.94); }
+
+header a.brand:not(.button):not(.skip) { color:#fff; }
