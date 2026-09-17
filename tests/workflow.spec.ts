@@ -10,7 +10,7 @@ test('coach profile saves preferences', async ({ page }) => {
   await page.goto(process.env.CALM_TEST_PATH || '/');
   await page.locator('#edit-coach').click();
   await page.locator('#coach-style').selectOption('quiet');
-  await page.getByRole('button', { name: 'Save my profile' }).click();
+  await page.getByRole('button', { name: 'Save', exact: true }).click();
   await expect(page.locator('#coach-reason')).toContainText('no spoken guidance');
   await expect(page.locator('#coach-profile')).toBeHidden();
 });
