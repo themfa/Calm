@@ -882,3 +882,34 @@ main>.closing { display:flex; align-items:center; }
 }
 
 .product-story > .button.mood-cta { margin-top:20px; }
+
+/* Workflow stages: equal cards with a centered heading area. */
+.workflow-stages { gap:20px; align-items:stretch; }
+.workflow-stages li {
+ display:flex;
+ flex-direction:column;
+ gap:0;
+ padding:20px;
+ border:1px solid transparent;
+ border-radius:12px;
+ background:var(--surface-raised);
+ transition:border-color var(--motion-instant);
+}
+.workflow-stages li:hover { border-color:#484848; }
+.workflow-stages .stage-heading {
+ display:flex;
+ flex-direction:column;
+ justify-content:center;
+ align-items:center;
+ text-align:center;
+ min-height:112px;
+ border:0;
+ padding:0;
+ margin-bottom:16px;
+}
+.workflow-stages .stage-heading h3 { font-size:22px; line-height:1.3; margin:8px 0 0; }
+.workflow-stages p { min-height:0; margin:0 0 24px; }
+.workflow-stages small { margin-top:auto; }
+.workflow-stages li:not(:last-child)::after { content:none; }
+@media(max-width:1000px) { .workflow-stages { grid-template-columns:repeat(2,minmax(0,1fr)); } }
+@media(max-width:540px) { .workflow-stages { grid-template-columns:1fr; } }
