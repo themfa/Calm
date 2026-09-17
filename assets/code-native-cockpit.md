@@ -9,9 +9,9 @@ Figma as an optional bridge. Target workflow; branch names are examples and auto
           ^
           | Sync / handshake
           v
-[ CODE REPOSITORY ] ----> [ CURSOR IDE ] ----------> [ NEXT.JS APP ROUTER ] ----> [ DEVIN ]
+[ CODE REPOSITORY ] ----> [ CURSOR + CODEX ] ----------> [ NEXT.JS APP ROUTER ] ----> [ DEVIN ]
   Source of truth          Central cockpit           Streaming / state           Background cloud QA
-  | spec.md                | Cursor Composer         | Variant A                  | Playwright QA
+  | spec.md                | Composer + Codex         | Variant A                  | Playwright + accessibility QA
   | AGENTS.md              | Integrated terminal     | feat/feed-vertical          | Preview URLs
   | Tailwind tokens        | Optional v0 CLI         | Variant B                  | Screenshots
                            | task-template.md        | feat/feed-horizontal        | Tested commit
@@ -33,3 +33,7 @@ Figma as an optional bridge. Target workflow; branch names are examples and auto
 5. **Measure and evolve:** `workflow/review-notes.md` records findings, outcomes, and next decisions. `workflow/README.md` describes handoff and release steps. Feed the findings back into `spec.md`.
 
 Document names in the diagram are shortened; workflow documents live under `workflow/`.
+
+## Visual graph stages
+
+01 Define + align: Repository → 02 Explore: Cursor + Codex → 03 Build + test: Next.js → 04 Verify: Devin → 05 Review + learn: Human Review. Figma remains an optional bridge. Human review checks the brief, compares outcomes with the baseline, and records the next decision in `workflow/review-notes.md`.

@@ -938,17 +938,17 @@ main>.closing { display:flex; align-items:center; }
 
 .horizontal-flow-scroll { overflow-x:auto; max-width:100%; padding:8px 0 16px; }
 .horizontal-flow-scroll:focus-visible { outline:2px solid var(--focus); outline-offset:4px; }
-.horizontal-flow { min-width:960px; }
-.flow-bridge-row { display:grid; grid-template-columns:repeat(4,minmax(0,1fr)); column-gap:32px; }
+.horizontal-flow { min-width:1000px; }
+.flow-bridge-row { display:grid; grid-template-columns:repeat(5,minmax(0,1fr)); column-gap:20px; }
 .flow-figma { grid-column:1; border:1px dashed var(--border-control); border-radius:8px; padding:16px; text-align:center; }
 .flow-figma h4 { font:600 20px/1.3 var(--font); margin:4px 0; }
 .flow-figma p { font-size:14px; color:var(--text-secondary); margin:8px 0; }
 .flow-handshake { grid-column:1; text-align:center; font-size:12px; color:var(--text-secondary); padding:12px 0; }
 .flow-handshake>span { display:block; font-size:24px; line-height:1.2; color:var(--text-primary); }
-.flow-nodes { list-style:none; display:grid; grid-template-columns:repeat(4,minmax(0,1fr)); gap:32px; padding:0; margin:0; }
+.flow-nodes { list-style:none; display:grid; grid-template-columns:repeat(5,minmax(0,1fr)); gap:20px; padding:0; margin:0; }
 .flow-nodes>li { position:relative; min-width:0; padding:20px 16px; border:1px solid var(--border-subtle); border-radius:8px; background:var(--surface-raised); transition:border-color var(--motion-instant); }
 .flow-nodes>li:hover { border-color:var(--border-control); }
-.flow-nodes>li:not(:last-child)::after { content:'→'; position:absolute; right:-27px; top:48px; color:var(--text-secondary); font-size:24px; }
+.flow-nodes>li:not(:last-child)::after { content:'→'; position:absolute; right:-18px; top:48px; color:var(--text-secondary); font-size:24px; }
 .node-heading { min-height:112px; text-align:center; display:flex; flex-direction:column; justify-content:center; }
 .node-kicker { font-size:12px; color:var(--text-secondary); }
 .node-heading h4 { font:600 22px/1.3 var(--font); margin:8px 0; }
@@ -969,3 +969,10 @@ main>.closing { display:flex; align-items:center; }
 .workflow-tool-list .cockpit-tools ul { display:grid; grid-template-columns:repeat(4,minmax(0,1fr)); gap:12px 24px; }
 .workflow-tool-list .cockpit-tools li { display:flex; align-items:center; min-height:48px; margin:0; color:var(--text-secondary); }
 @media(max-width:540px) { .workflow-tool-list .cockpit-tools ul { grid-template-columns:repeat(2,minmax(0,1fr)); } }
+
+/* Let the workflow use the viewport while prose retains its reading width. */
+.integrated-flow { position:relative; left:50%; transform:translateX(-50%); width:calc(100vw - 64px); max-width:none; }
+@media(max-width:767px) { .integrated-flow { width:calc(100vw - 40px); } }
+
+/* Text links retain their color without decorative arrows or underlines. */
+body a:not(.button):not(.skip), body a:not(.button):not(.skip):hover, body a:not(.button):not(.skip):focus-visible, .skip, .my-calm .coach-edit { text-decoration:none; border-bottom:0; }
