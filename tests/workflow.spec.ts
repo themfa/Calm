@@ -1,13 +1,13 @@
 import { test, expect } from '@playwright/test';
 test('page preserves navigation, assets, and mobile layout', async ({ page }) => {
-  await page.goto('/');
+  await page.goto(process.env.CALM_TEST_PATH || '/');
   await expect(page.locator('#hero-title')).toContainText('mood enhancer');
   await expect(page.locator('.calm-logo')).toBeVisible();
   expect(await page.locator('.calm-logo').evaluate((img: HTMLImageElement) => img.complete && img.naturalWidth > 0)).toBe(true);
   expect(await page.evaluate(() => document.documentElement.scrollWidth <= innerWidth + 1)).toBe(true);
 });
 test('handoff and coach profile work with the keyboard', async ({ page }) => {
-  await page.goto('/');
+  await page.goto(process.env.CALM_TEST_PATH || '/');
   const handoff = page.locator('#handoff-button');
   await handoff.focus(); await page.keyboard.press('Enter');
   await expect(handoff).toHaveAttribute('aria-expanded', 'true');
