@@ -741,7 +741,7 @@ main>.workflow-section { width:min(1120px,calc(100% - 64px)); }
  border-color:color-mix(in srgb,var(--mood-a) 45%,#34425a);
 
 }
-:root { animation:calm-mood-ring 120s linear infinite; }
+:root { animation:calm-mood-ring 24s linear infinite; }
 @keyframes calm-mood-ring {
  0%,100% { --mood-top:#542c3b; --mood-bottom:#503729; --mood-a:#ff7b91; --mood-b:#ffa779; }
  25% { --mood-top:#503424; --mood-bottom:#454026; --mood-a:#ffa06d; --mood-b:#ffdb72; }
