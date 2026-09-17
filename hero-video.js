@@ -4,6 +4,8 @@ const reducedMotion = matchMedia('(prefers-reduced-motion: reduce)');
 document.querySelectorAll('.hero-film video').forEach(video => {
   let replayTimer, filmFrame;
   let inView = false;
+  let ctaHovered = false;
+  let ctaFocused = false;
   let motionPaused = reducedMotion.matches;
 
   function paintFilm() {
@@ -13,7 +15,7 @@ document.querySelectorAll('.hero-film video').forEach(video => {
     if (!video.paused) filmFrame = requestAnimationFrame(paintFilm);
   }
   function playFilm() {
-    if (motionPaused || document.hidden || !inView) return;
+    if (motionPaused || document.hidden || !inView || ctaHovered || ctaFocused) return;
     if (video.ended) video.currentTime = 0;
     video.play().catch(() => {});
   }
@@ -21,6 +23,13 @@ document.querySelectorAll('.hero-film video').forEach(video => {
     video.pause();
     clearTimeout(replayTimer);
     cancelAnimationFrame(filmFrame);
+  }
+  if (video.id === 'footer-video') {
+    const cta = document.querySelector('.closing > .button');
+    cta.addEventListener('pointerenter', () => { ctaHovered = true; pauseFilm(); });
+    cta.addEventListener('pointerleave', () => { ctaHovered = false; playFilm(); });
+    cta.addEventListener('focus', () => { ctaFocused = true; pauseFilm(); });
+    cta.addEventListener('blur', () => { ctaFocused = false; playFilm(); });
   }
   video.addEventListener('playing', () => { cancelAnimationFrame(filmFrame); paintFilm(); });
   video.addEventListener('ended', () => {

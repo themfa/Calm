@@ -848,3 +848,8 @@ header a.brand:not(.button):not(.skip) { color:#fff; }
 .workflow-details summary.button::-webkit-details-marker { display:none; }
 .workflow-details summary.button::after { content:'+'; font-size:22px; line-height:1; }
 .workflow-details[open] summary.button::after { content:'−'; }
+
+main>.closing { display:flex; align-items:center; }
+.closing p { margin-bottom:0; }
+.closing>.button { flex-shrink:0; }
+@media(max-width:767px) { main>.closing { flex-direction:column; justify-content:center; align-items:flex-start; } .closing>.button { margin-top:0; } }
