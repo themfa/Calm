@@ -8,10 +8,7 @@ export default async function Home() {
   const source = await readFile(path.join(process.cwd(), 'index.html'), 'utf8');
   const body = source.match(/<body>([\s\S]*?)<\/body>/)?.[1];
   if (!body) throw new Error('The authored page is missing its body.');
-  let markup = body.replace(/<script\b[^>]*>[\s\S]*?<\/script>/g, '');
-  if (process.env.NODE_ENV === 'production') {
-    markup = markup.replace(/<figure class="jane-live">[\s\S]*?<\/figure>/, '<figure class="jane-live"><video controls playsinline preload="metadata" poster="/assets/jane-walkthrough-poster.jpg" aria-label="Jane onboarding walkthrough" style="display:block;width:100%;max-height:780px;background:#000"><source src="/assets/jane-walkthrough.mp4" type="video/mp4"></video><figcaption>Recorded onboarding · Simulated shopping flow</figcaption></figure>');
-  }
+  const markup = body.replace(/<script\b[^>]*>[\s\S]*?<\/script>/g, '');
   return <>
     <div dangerouslySetInnerHTML={{ __html: markup }} />
     <Script src="/hero-video.js" strategy="afterInteractive" />

@@ -820,3 +820,9 @@ main>.judgment-section{width:min(1040px,calc(100% - 64px));padding-block:56px}
 .build-process-intro h3{font:600 26px/1.3 var(--font);margin-bottom:16px}
 .build-process-intro p{color:var(--text-secondary)}
 @media(max-width:767px){.principal-process{grid-template-columns:1fr;gap:28px;margin-bottom:40px}.principal-process li,.principal-process li:nth-child(n+4){grid-column:auto}.principal-process p{font-size:17px}}
+.workflow-details { margin-top:32px; border-top:1px solid var(--border-subtle); }
+.workflow-details summary { cursor:pointer; padding:20px 0; min-height:44px; font-size:18px; }
+.workflow-details .cockpit-reference { border-top:0; padding-top:12px; }
+.workflow-target { color:var(--text-secondary); font-size:14px; margin:32px 0 16px; }
+.my-calm .coach-feedback-help { font-size:14px; line-height:1.5; margin:-8px 0 16px; }
+.exploration-feature .exploration-visit, .exploration-notes a { min-height:44px; display:inline-flex; align-items:center; }

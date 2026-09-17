@@ -8,7 +8,6 @@ for (const entry of ['assets', 'covers', 'work', 'styles.css', 'hero-video.js', 
 }
 let html = await readFile('index.html', 'utf8');
 html = html.replace('<head>', '<head>\n<base href="/calm/">');
-html = html.replace(/<figure class="jane-live">[\s\S]*?<\/figure>/, '<figure class="jane-live"><video controls playsinline preload="metadata" poster="assets/jane-walkthrough-poster.jpg" aria-label="Jane onboarding walkthrough" style="display:block;width:100%;max-height:780px;background:#000"><source src="assets/jane-walkthrough.mp4" type="video/mp4"></video><figcaption>Recorded onboarding · Simulated shopping flow</figcaption></figure>');
 await writeFile(path.join(destination, 'index.html'), html);
 const bundlePath = path.join(destination, 'covers/bundle.js');
 const bundle = await readFile(bundlePath, 'utf8');
