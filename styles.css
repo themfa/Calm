@@ -826,3 +826,16 @@ main>.judgment-section{width:min(1040px,calc(100% - 64px));padding-block:56px}
 .workflow-target { color:var(--text-secondary); font-size:14px; margin:32px 0 16px; }
 .my-calm .coach-feedback-help { font-size:14px; line-height:1.5; margin:-8px 0 16px; }
 .exploration-feature .exploration-visit, .exploration-notes a { min-height:44px; display:inline-flex; align-items:center; }
+
+/* Work destinations and closing atmosphere. */
+:root { --link-accent: #F5C400; }
+a:not(.button):not(.skip), .jane-live figcaption a { color:var(--link-accent); }
+a:not(.button):not(.skip):hover { text-decoration:underline; text-decoration-thickness:2px; }
+.work-visit, .work-links a { display:inline-flex; align-items:center; min-height:44px; font-size:16px; }
+.exploration-feature .exploration-visit { text-decoration:underline; }
+.jane-live figcaption { display:flex; justify-content:center; align-items:center; min-height:64px; margin:0; }
+.jane-live figcaption a { display:inline-flex; align-items:center; min-height:44px; }
+main>.closing { position:relative; isolation:isolate; width:100%; border:0; padding:96px max(32px,calc((100% - 1120px)/2)); min-height:340px; }
+.closing .hero-film { inset:0; }
+.closing .hero-film::after { background:linear-gradient(to bottom,var(--surface-base),transparent 35%,#000 100%),linear-gradient(to right,rgba(0,0,0,.85),rgba(0,0,0,.6) 56%,rgba(0,0,0,.3)); }
+@media(max-width:767px) { main>.closing { width:100%; padding:64px 20px; } }
