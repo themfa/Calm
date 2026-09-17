@@ -56,60 +56,31 @@
 <section class="section workflow-section" id="approach" aria-labelledby="approach-title">
 <div class="section-head"><h2 id="approach-title">How I design and build.</h2><p>I connect customer needs to product strategy, align teams around a direction, and stay close to the craft through delivery.</p></div>
 <ol class="principal-process" aria-label="Principal product design process">
-<li><span class="process-number" aria-hidden="true">01</span><h3>Frame the right problem.</h3><p>Bring customer research, product signals, and business goals together. Define the opportunity, constraints, and what success should mean.</p></li>
-<li><span class="process-number" aria-hidden="true">02</span><h3>Align on a direction.</h3><p>Partner with product, engineering, and leadership to shape a shared vision. Make tradeoffs explicit and focus the team on the most valuable next step.</p></li>
-<li><span class="process-number" aria-hidden="true">03</span><h3>Explore. Test. Decide.</h3><p>Explore multiple paths and prototype the riskiest assumptions. Use customer feedback and feasibility checks to choose what earns further investment.</p></li>
-<li><span class="process-number" aria-hidden="true">04</span><h3>Carry the craft through.</h3><p>Guide interaction quality, accessibility, and the shared design system. Work alongside engineers and support designers as the experience takes shape.</p></li>
-<li><span class="process-number" aria-hidden="true">05</span><h3>Measure and evolve.</h3><p>Compare outcomes with the starting baseline. Combine usage data with customer feedback, then feed what we learn into the next product decision.</p></li>
+<li><span class="process-number" aria-hidden="true">01</span><h3>Frame the right problem.</h3><p>Bring customer research, product signals, and business goals together. Define the opportunity, constraints, and what success should mean.</p><div class="process-touchpoint"><span class="touchpoint-tool">Repository / source of truth</span><span class="touchpoint-purpose">Problem, constraints, success criteria</span><a href="https://github.com/themfa/Calm/blob/main/spec.md" target="_blank" rel="noopener noreferrer">spec.md ↗</a></div></li>
+<li><span class="process-number" aria-hidden="true">02</span><h3>Align on a direction.</h3><p>Partner with product, engineering, and leadership to shape a shared vision. Make tradeoffs explicit and focus the team on the most valuable next step.</p><div class="process-touchpoint"><span class="touchpoint-tool">Figma &lt;--&gt; Repository</span><span class="touchpoint-purpose">Shared design decisions + Tailwind tokens</span><a href="https://github.com/themfa/Calm/blob/main/DESIGN.md" target="_blank" rel="noopener noreferrer">DESIGN.md ↗</a></div></li>
+<li><span class="process-number" aria-hidden="true">03</span><h3>Explore. Test. Decide.</h3><p>Explore multiple paths and prototype the riskiest assumptions. Use customer feedback and feasibility checks to choose what earns further investment.</p><div class="process-touchpoint"><span class="touchpoint-tool">Cursor IDE --&gt; Next.js</span><span class="touchpoint-purpose">Composer variants + optional v0 CLI</span><a href="https://github.com/themfa/Calm/blob/main/workflow/task-template.md" target="_blank" rel="noopener noreferrer">task-template.md ↗</a></div></li>
+<li><span class="process-number" aria-hidden="true">04</span><h3>Carry the craft through.</h3><p>Guide interaction quality, accessibility, and the shared design system. Work alongside engineers and support designers as the experience takes shape.</p><div class="process-touchpoint"><span class="touchpoint-tool">Git branch --&gt; Devin</span><span class="touchpoint-purpose">Playwright QA + reviewable preview</span><a href="https://github.com/themfa/Calm/blob/main/workflow/devin-qa.md" target="_blank" rel="noopener noreferrer">devin-qa.md ↗</a></div></li>
+<li><span class="process-number" aria-hidden="true">05</span><h3>Measure and evolve.</h3><p>Compare outcomes with the starting baseline. Combine usage data with customer feedback, then feed what we learn into the next product decision.</p><div class="process-touchpoint"><span class="touchpoint-tool">Review --&gt; next brief</span><span class="touchpoint-purpose">Evidence, outcomes, next decision</span><a href="https://github.com/themfa/Calm/blob/main/workflow/review-notes.md" target="_blank" rel="noopener noreferrer">review-notes.md ↗</a></div></li>
 </ol>
-<div class="build-process-intro"><h3>From product direction to working interfaces.</h3><p>Code is the source of truth. Cursor is the central workspace. Figma keeps the design team connected.</p><p class="workflow-status">The workflow I’m building toward; automated handoffs are still being set up.</p></div>
-<dl class="workflow-principles">
-<div><dt>Flexible Ideation</dt><dd>Sketch in Pen and Figma. Move to Lovable or Figma Make when the deliverable needs an interactive prototype.</dd></div>
-<div><dt>Multi-Agent Orchestration</dt><dd>Set shared specs and design tokens so agents can build across Next.js, v0, and Devin.</dd></div>
-<div><dt>Live Code Execution</dt><dd>Build parallel variations in code and keep partners aligned through the shared Figma system.</dd></div>
-<div><dt>Velocity Impact</dt><dd>Review latency, micro-interactions, and accessibility in the browser. Aim to shorten iteration from weeks to hours.</dd></div>
-</dl>
-
-<div class="workflow-sequence" aria-label="From shared design decisions to reviewed previews">
-<aside class="workflow-bridge"><h3>Figma</h3><span>Optional collaboration bridge</span><p>Bring in team assets and exchange token specs with the repository.</p><span class="workflow-sync">↕ <span>Sync / handshake</span></span></aside>
-<ol class="workflow-stages">
-<li><div class="stage-heading"><span>Brief</span><h3>Repository</h3></div><p>The source of truth for tokens, components, and accessibility rules.</p><small>spec.md · Tailwind tokens<br>.cursor/rules/</small></li>
-<li><div class="stage-heading"><span>Variants</span><h3>Cursor / Codex</h3></div><p>Direct Composer to explore UI variations against the brief. Explore a future v0 handoff for React primitives.</p><small>Composer · v0 CLI<br>Shared repository specs</small></li>
-<li><div class="stage-heading"><span>Live UI</span><h3>Next.js</h3></div><p>Test streaming, fallback states, and human decisions in working interfaces.</p><small>App Router · Variant A / B<br>Git branches → handoff</small></li>
-<li><div class="stage-heading"><span>Review</span><h3>Devin</h3></div><p>Planned: background browser QA and shared previews for team review.</p><small>Playwright · Vercel previews<br>Human review before release</small></li>
+<section class="cockpit-flow integrated-flow" aria-labelledby="cockpit-flow-title">
+<div class="flow-heading"><div><span class="flow-eyebrow">From product direction to working interfaces</span><h3 id="cockpit-flow-title">Full Flow: Code-Native Cockpit</h3></div><a class="work-visit" href="assets/code-native-cockpit.md" download>Download .md ↓</a></div>
+<p>Code is the source of truth. Cursor is the central workspace. Figma is an optional bridge to the design team.</p>
+<p class="flow-status">Target workflow · Branch names are examples; automated tool handoffs are not yet connected.</p>
+<div class="horizontal-flow-scroll" tabindex="0" role="region" aria-label="Horizontal code-native workflow. Scroll horizontally on smaller screens.">
+<div class="horizontal-flow">
+<div class="flow-bridge-row"><aside class="flow-figma"><span class="node-kicker">Optional bridge</span><h4>Figma</h4><p>Design team · assets + tokens</p><code>DESIGN.md</code></aside><span class="flow-handshake"><span aria-hidden="true">↕</span> Sync / handshake</span></div>
+<ol class="flow-nodes">
+<li><div class="node-heading"><span class="node-kicker">01–02 / Define + align</span><h4>Code Repository</h4><span>Source of truth</span></div><ul><li><code>spec.md</code><span>Intent + acceptance criteria</span></li><li><code>AGENTS.md</code><span>Agent rules + context</span></li><li><code>Tailwind tokens</code><span>Shared design decisions</span></li></ul></li>
+<li><div class="node-heading"><span class="node-kicker">03 / Explore</span><h4>Cursor IDE</h4><span>Central cockpit</span></div><ul><li><strong>Cursor Composer</strong><span>Generate interface variants</span></li><li><strong>Integrated terminal</strong><span>Optional v0 CLI handoff</span></li><li><code>task-template.md</code><code>v0-brief.md</code></li></ul></li>
+<li><div class="node-heading"><span class="node-kicker">03–04 / Build + test</span><h4>Next.js</h4><span>App Router · streaming / state</span></div><ul><li><strong>Variant A</strong><code>feat/feed-vertical</code></li><li><strong>Variant B</strong><code>feat/feed-horizontal</code></li><li><code>spec.md</code><span>Check against acceptance</span></li></ul><span class="node-handoff">Git push / branch →</span></li>
+<li><div class="node-heading"><span class="node-kicker">04 / Verify</span><h4>Devin</h4><span>Background cloud agent</span></div><ul><li><strong>Playwright QA</strong><span>Desktop + mobile checks</span></li><li><strong>Preview URLs</strong><span>Screenshots + tested commit</span></li><li><code>devin-qa.md</code><span>Verification handoff</span></li></ul></li>
 </ol>
-</div>
-<details class="workflow-details"><summary class="button mood-cta">Explore my tools and workflow details</summary><section class="cockpit-flow" aria-labelledby="cockpit-flow-title"><h3 id="cockpit-flow-title">Full Flow: Code-Native Cockpit</h3><p>Figma as an optional bridge. Target workflow; branch names are examples and automated handoffs are not yet connected.</p><pre tabindex="0" aria-label="Code-native workflow with Markdown documents at each stage">[ CODE REPOSITORY / SOURCE OF TRUTH ] &lt;-- Sync / Handshake --&gt; [ FIGMA ]
-|  spec.md              Product intent and acceptance criteria  Optional
-|  AGENTS.md            Agent rules and implementation context  team bridge
-|  DESIGN.md            Design reference
-|  styles.css           Personal tokens / Tailwind mapping
-|
-v
-[ CURSOR / CODEX / CENTRAL COCKPIT ]
-|  workflow/task-template.md   Scope, constraints, deliverables
-|  Cursor Composer            Explore interface variants
-|  workflow/v0-brief.md        Brief for optional v0 generation
-|  Integrated terminal        Optional v0 CLI handoff
-|
-v
-[ NEXT.JS APP ROUTER / STREAMING + STATE ]
-|  Variant A: feat/feed-vertical
-|  Variant B: feat/feed-horizontal
-|  spec.md                    Check both against acceptance criteria
-|
-|  Git push / branch + reviewable handoff
-v
-[ DEVIN / BACKGROUND CLOUD AGENT ]
-|  workflow/devin-qa.md        QA scope, browser checks, evidence
-|  Playwright                 Desktop / mobile QA
-|  Preview URLs               Share the tested build
-|
-v
-[ HUMAN REVIEW / RELEASE ]
-   workflow/README.md         Handoff and release guidance
-   Paul reviews the result before release
-</pre><a class="work-visit" href="assets/code-native-cockpit.md" download>Download workflow .md ↓</a></section><div class="cockpit-reference"><div><h3>Cheat sheet</h3><dl class="cockpit-cheats"><div><dt>Candidate profile</dt><dd>Senior AI-Native Design Engineer / Lead Product Designer</dd></div><div><dt>Core philosophy</dt><dd>Explore in design tools, test in working code, and keep the team aligned through shared specs and design tokens.</dd></div><div><dt>Central stack</dt><dd>Cursor, Next.js, React, Tailwind CSS, and Figma; exploring v0, Devin, and Linear handoffs.</dd></div><div><dt>Workflow</dt><dd>Define the brief in <code>spec.md</code>, build interface variations, and review them in the browser. Automated agent handoffs are still being set up.</dd></div><div><dt>Business impact</dt><dd>Test decisions earlier in live previews, with the goal of shortening design-to-engineering iteration.</dd></div></dl></div>
+<div class="flow-return"><span>↑ Update <code>spec.md</code></span><span aria-hidden="true">←</span><div><strong>05 / Human review + next iteration</strong><span><code>review-notes.md</code> · <code>README.md</code></span></div><span aria-hidden="true">←</span><span>QA evidence ↓</span></div>
+</div></div>
+<p class="flow-scroll-hint">Follow the flow left to right. On smaller screens, swipe to explore. Workflow documents live in <code>workflow/</code>.</p>
+<div class="flow-key"><span><b>01–02</b> Define + align</span><span><b>03</b> Explore in code</span><span><b>04</b> Verify the experience</span><span><b>05</b> Learn + repeat</span></div>
+</section>
+<details class="workflow-details"><summary class="button mood-cta">Explore my tools and workflow details</summary><div class="cockpit-reference"><div><h3>Cheat sheet</h3><dl class="cockpit-cheats"><div><dt>Candidate profile</dt><dd>Senior AI-Native Design Engineer / Lead Product Designer</dd></div><div><dt>Core philosophy</dt><dd>Explore in design tools, test in working code, and keep the team aligned through shared specs and design tokens.</dd></div><div><dt>Central stack</dt><dd>Cursor, Next.js, React, Tailwind CSS, and Figma; exploring v0, Devin, and Linear handoffs.</dd></div><div><dt>Workflow</dt><dd>Define the brief in <code>spec.md</code>, build interface variations, and review them in the browser. Automated agent handoffs are still being set up.</dd></div><div><dt>Business impact</dt><dd>Test decisions earlier in live previews, with the goal of shortening design-to-engineering iteration.</dd></div></dl></div>
 <aside class="cockpit-tools" aria-labelledby="tool-list-title"><h3 id="tool-list-title">Tool list</h3><ul><li>Figma</li><li>Pen.dev</li><li>Framer</li><li>Three.js</li><li>Cursor</li><li>Codex</li><li>Claude</li><li>v0 (Vercel)</li><li>Uizard / UiMagic</li><li>Conductor</li><li>Linear</li><li>GitHub</li></ul></aside></div></details>
 </section>
 <section class="section prototype-section full-band" aria-labelledby="prototype-title">

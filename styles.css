@@ -918,3 +918,48 @@ main>.closing { display:flex; align-items:center; }
 .cockpit-flow>p { color:var(--text-secondary); max-width:70ch; font-size:16px; }
 .cockpit-flow pre { overflow-x:auto; max-width:100%; padding:24px; border:1px solid var(--border-subtle); border-radius:12px; background:var(--surface-raised); color:var(--text-primary); font:13px/1.7 var(--font-display); white-space:pre; }
 .cockpit-flow pre:focus-visible { outline:2px solid var(--focus); outline-offset:4px; }
+
+/* Connect design judgment to the documents and tools used at each step. */
+.principal-process li { display:flex; flex-direction:column; }
+.process-touchpoint { margin-top:24px; padding-top:16px; border-top:1px solid var(--border-subtle); display:flex; flex-direction:column; gap:8px; }
+.process-touchpoint .touchpoint-tool { font:500 14px/1.6 var(--font-display); color:var(--text-primary); }
+.process-touchpoint .touchpoint-purpose { font-size:16px; line-height:1.5; color:var(--text-secondary); }
+.process-touchpoint a { align-self:flex-start; font:400 14px/1.6 var(--font-display); overflow-wrap:anywhere; padding-block:8px; }
+.integrated-flow { margin:64px 0 40px; }
+.flow-heading { display:flex; justify-content:space-between; align-items:center; gap:24px; }
+.flow-heading h3 { margin:8px 0 16px; font-size:28px; }
+.flow-heading>a { flex-shrink:0; font-size:16px; }
+.flow-eyebrow { color:var(--text-secondary); font-size:16px; }
+.integrated-flow .flow-status { font-size:14px; margin-bottom:24px; }
+.integrated-flow pre { padding:32px; font-size:14px; line-height:1.8; font-variant-ligatures:none; border-color:var(--border-control); background:var(--surface-base); }
+.flow-key { display:flex; flex-wrap:wrap; gap:16px 32px; color:var(--text-secondary); font-size:14px; }
+.flow-key b { color:var(--text-primary); font-weight:600; margin-right:8px; }
+@media(max-width:767px) { .flow-heading { align-items:flex-start; flex-direction:column; gap:0; } .flow-heading>a { margin-bottom:20px; } .flow-heading h3 { font-size:24px; } .integrated-flow pre { padding:20px; font-size:13px; } .integrated-flow { margin-top:40px; } }
+
+.horizontal-flow-scroll { overflow-x:auto; max-width:100%; padding:8px 0 16px; }
+.horizontal-flow-scroll:focus-visible { outline:2px solid var(--focus); outline-offset:4px; }
+.horizontal-flow { min-width:960px; }
+.flow-bridge-row { display:grid; grid-template-columns:repeat(4,minmax(0,1fr)); column-gap:32px; }
+.flow-figma { grid-column:1; border:1px dashed var(--border-control); border-radius:8px; padding:16px; text-align:center; }
+.flow-figma h4 { font:600 20px/1.3 var(--font); margin:4px 0; }
+.flow-figma p { font-size:14px; color:var(--text-secondary); margin:8px 0; }
+.flow-handshake { grid-column:1; text-align:center; font-size:12px; color:var(--text-secondary); padding:12px 0; }
+.flow-handshake>span { display:block; font-size:24px; line-height:1.2; color:var(--text-primary); }
+.flow-nodes { list-style:none; display:grid; grid-template-columns:repeat(4,minmax(0,1fr)); gap:32px; padding:0; margin:0; }
+.flow-nodes>li { position:relative; min-width:0; padding:20px 16px; border:1px solid var(--border-subtle); border-radius:8px; background:var(--surface-raised); transition:border-color var(--motion-instant); }
+.flow-nodes>li:hover { border-color:var(--border-control); }
+.flow-nodes>li:not(:last-child)::after { content:'→'; position:absolute; right:-27px; top:48px; color:var(--text-secondary); font-size:24px; }
+.node-heading { min-height:112px; text-align:center; display:flex; flex-direction:column; justify-content:center; }
+.node-kicker { font-size:12px; color:var(--text-secondary); }
+.node-heading h4 { font:600 22px/1.3 var(--font); margin:8px 0; }
+.node-heading>span:last-child { font-size:14px; color:var(--text-secondary); }
+.flow-nodes ul { list-style:none; padding:16px 0 0; margin:16px 0 0; border-top:1px solid var(--border-subtle); display:flex; flex-direction:column; gap:20px; }
+.flow-nodes ul li { display:flex; flex-direction:column; gap:4px; }
+.flow-nodes strong { font-size:16px; font-weight:600; }
+.flow-nodes ul span { font-size:14px; line-height:1.5; color:var(--text-secondary); }
+.horizontal-flow code { font:400 12px/1.7 var(--font-display); color:var(--text-primary); }
+.node-handoff { display:block; font-size:12px; color:var(--text-secondary); margin-top:16px; }
+.flow-return { margin-top:24px; padding:20px 16px; display:flex; align-items:center; justify-content:space-between; gap:16px; border-bottom:1px solid var(--border-control); border-inline:1px solid var(--border-control); border-radius:0 0 8px 8px; font-size:14px; color:var(--text-secondary); }
+.flow-return div { text-align:center; display:flex; flex-direction:column; gap:8px; }
+.flow-return strong { color:var(--text-primary); font-weight:600; }
+.integrated-flow .flow-scroll-hint { font-size:13px; margin:8px 0 24px; color:var(--text-secondary); }
