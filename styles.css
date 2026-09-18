@@ -190,7 +190,7 @@ header{padding:12px 0;min-height:68px}
 .hero .eyebrow{margin-bottom:20px}
 .hero h1{max-width:25ch;margin-bottom:20px}
 .hero .intro{max-width:58ch;margin-bottom:20px}
-.hero .button{white-space:nowrap;margin:0}
+.hero .button{white-space:nowrap;margin:0;position:relative;top:30px}
 .experience-strip{display:grid;grid-template-columns:repeat(4,1fr);gap:24px;border-top:1px solid var(--border-subtle);padding:24px 0 32px}
 .experience-strip p{margin:0;color:var(--text-secondary);font-size:15px}
 .experience-strip strong{display:block;color:var(--text-primary);font-weight:600;font-size:18px}
@@ -518,7 +518,8 @@ main>.prototype-section.full-band { width:100%; max-width:none; padding:64px max
 .token-lab { grid-template-columns:1fr 1fr; gap:32px; }
 .swatch-grid { grid-template-columns:repeat(3,minmax(0,1fr)); }
 #explore { width:min(1120px,calc(100% - 64px)); }
-#explore .section-head { max-width:640px; }
+#explore .section-head { width:100%; max-width:706px; }
+#explore #explore-title { width:auto; padding-left:0; margin-left:-10px; border-width:9px; text-align:left; }
 #explore .jane-feature { grid-template-columns:minmax(0,1fr) minmax(0,1fr); }
 .closing { padding-block:64px; }
 @media(min-width:1500px){main>#work{width:1120px}.product-grid{gap:64px}.product-cover{aspect-ratio:4/3}}
@@ -622,11 +623,13 @@ main>.prototype-section.full-band { padding-block:88px; border:0; }
 .prototype-section .swatch-grid i { height:28px; }
 .exploration-spread { display:grid; grid-template-columns:minmax(0,1.6fr) minmax(0,1fr); gap:56px; align-items:start; }
 .exploration-feature a { text-decoration:none; }
-.exploration-feature img { display:block; width:100%; height:auto; }
+.exploration-feature img, .exploration-feature video { display:block; width:100%; height:auto; }
+.exploration-feature video { aspect-ratio:16/9; object-fit:cover; }
 .exploration-feature h3 { display:flex; justify-content:space-between; font-size:24px; margin:20px 0 8px; }
 .exploration-spread p { font-size:17px; color:var(--text-secondary); margin-bottom:0; }
 .exploration-notes article { margin-bottom:32px; }
 .exploration-notes h3 { font-size:24px; margin-bottom:12px; }
+.exploration-notes article > strong { font-size:24px; }
 .exploration-notes a { text-underline-offset:5px; }
 .exploration-notes article:not(:first-child) { font-size:16px; max-width:32ch; }
 .exploration-notes article:not(:first-child) p { font-size:15px; }
@@ -709,6 +712,7 @@ main>.workflow-section { width:min(1120px,calc(100% - 64px)); }
 /* My Calm: a user-owned profile, with explicitly simulated devices. */
 .concept-eyebrow { font-size:14px; }
 .my-calm .coach-top { display:flex; align-items:center; justify-content:space-between; gap:12px; margin-bottom:16px; font-size:18px; }
+.my-calm .coach-logo { display:block; width:88px; height:auto; }
 .my-calm .coach-edit { font:inherit; font-size:14px; color:#fff; background:transparent; border:0; text-decoration:underline; text-underline-offset:4px; min-height:44px; padding:8px 0; cursor:pointer; }
 .my-calm .calm-art img { height:140px; }
 .my-calm .coach-context { font-size:13px; margin-bottom:12px; }
@@ -849,8 +853,17 @@ header a.brand:not(.button):not(.skip) { color:#fff; }
 .workflow-details[open] summary.button::after { content:'−'; }
 
 main>.closing { display:flex; align-items:center; }
-.closing p { margin-bottom:0; }
+.closing > div:not(.hero-film) { flex:1; width:100%; text-align:right; }
+.closing p { margin-bottom:0; max-width:none; }
+.closing #close-title, .closing p { margin-left:auto; margin-right:0; text-align:right; }
 .closing>.button { flex-shrink:0; }
+/* Desktop annotation insets stay relative to the available footer column. */
+@media(min-width:768px) {
+ .closing > div:not(.hero-film) { min-width:0; }
+ .closing #close-title { width:100%; max-width:700px; }
+ .closing p { width:100%; max-width:888px; }
+ .closing > .button { margin-top:1px; margin-right:38px; }
+}
 @media(max-width:767px) { main>.closing { flex-direction:column; justify-content:center; align-items:flex-start; } .closing>.button { margin-top:0; } }
 
 /* Preference outlines share the inherited CTA color cycle. */
@@ -944,7 +957,7 @@ main>.closing { display:flex; align-items:center; }
 .flow-figma h4 { font:600 20px/1.3 var(--font); margin:4px 0; }
 .flow-figma p { font-size:14px; color:var(--text-secondary); margin:8px 0; }
 .flow-handshake { grid-column:1; text-align:center; font-size:12px; color:var(--text-secondary); padding:12px 0; }
-.flow-handshake>span { display:block; font-size:24px; line-height:1.2; color:var(--text-primary); }
+.flow-handshake>span { display:block; font-size:24px; line-height:1.2; color:var(--text-primary); transform:translateY(-4px); }
 .flow-nodes { list-style:none; display:grid; grid-template-columns:repeat(5,minmax(0,1fr)); gap:20px; padding:0; margin:0; }
 .flow-nodes>li { position:relative; min-width:0; padding:20px 16px; border:1px solid var(--border-subtle); border-radius:8px; background:var(--surface-raised); transition:border-color var(--motion-instant); }
 .flow-nodes>li:hover { border-color:var(--border-control); }
@@ -976,3 +989,60 @@ main>.closing { display:flex; align-items:center; }
 
 /* Text links retain their color without decorative arrows or underlines. */
 body a:not(.button):not(.skip), body a:not(.button):not(.skip):hover, body a:not(.button):not(.skip):focus-visible, .skip, .my-calm .coach-edit { text-decoration:none; border-bottom:0; }
+
+/* Balanced MustWants story and photo, with a shared closing action. */
+.mustwants-layout .handoff-demo{align-self:stretch;display:flex;flex-direction:column}
+.mustwants-layout .house-scene{flex:1;min-height:280px}
+.mustwants-layout .house-scene img{position:absolute;inset:0;height:100%;aspect-ratio:auto}
+.mustwants-action{display:flex;justify-content:center;margin-top:40px}
+@media(max-width:767px){.mustwants-layout .house-scene{flex:none;min-height:0;aspect-ratio:3/2}.mustwants-action{margin-top:32px}}
+
+/* Center the workflow introduction and optional bridge as one vertical stack. */
+.integrated-flow .flow-heading{justify-content:center;align-items:center;text-align:center}
+.integrated-flow>p{margin-inline:auto;text-align:center}
+.integrated-flow .flow-bridge-row{display:flex;flex-direction:column;align-items:center;margin-top:24px}
+.integrated-flow .flow-figma{width:clamp(220px,18vw,280px);max-width:100%}
+.flow-bridge-row code{font:400 12px/1.7 var(--font-display);color:var(--text-primary)}
+
+/* Aquarium footage sits behind the complete workflow, below a readability veil. */
+.integrated-flow{isolation:isolate;padding-block:48px}
+.integrated-flow .workflow-film{inset:0;z-index:-1;background:var(--surface-base)}
+.integrated-flow .workflow-film video{object-position:center}
+.integrated-flow .workflow-film::after{background:linear-gradient(to bottom,var(--surface-base),transparent 20%,transparent 80%,var(--surface-base)),rgba(13,12,11,.72)}
+.integrated-flow .flow-figma{background:var(--surface-raised)}
+@media(max-width:767px){.integrated-flow{padding-block:32px}}
+
+/* Workflow accents selected for document links and stage labels. */
+#approach{--workflow-document-accent:#FFA779;--workflow-stage-accent:#FF7B91}
+#approach .process-touchpoint a{color:var(--workflow-document-accent)}
+#approach .integrated-flow .node-kicker,
+#approach .integrated-flow .flow-eyebrow{color:var(--workflow-stage-accent)}
+
+/* Tool groups align with their workflow cards, outside the card surfaces. */
+.flow-tool-groups{display:grid;grid-template-columns:repeat(5,minmax(0,1fr));gap:20px;margin-top:20px}
+.flow-tools{list-style:none;padding:0 16px;margin:0;display:flex;flex-wrap:wrap;align-content:flex-start;justify-content:center;gap:8px 16px;text-align:center}
+.flow-tools li{display:flex;align-items:center;justify-content:center;min-height:32px;font-size:16px;line-height:1.5;color:var(--text-primary)}
+.integrated-flow .bridge-tools{max-width:320px;margin-top:16px}
+
+/* Supporting tools follow the card text inset in simple vertical lists. */
+.flow-tool-groups .flow-tools{flex-direction:column;align-items:flex-start;justify-content:flex-start;gap:8px;text-align:left;padding-inline:17px}
+.flow-tool-groups .flow-tools li{justify-content:flex-start;min-height:24px}
+
+/* Primary workflow text follows the aquarium fade; stage accents stay pink. */
+.integrated-flow{--workflow-film-ink:#ffffff}
+#approach .integrated-flow .node-heading h4,
+#approach .integrated-flow .flow-figma h4{color:#ffffff}
+#approach .integrated-flow #cockpit-flow-title,
+#approach .integrated-flow .flow-nodes strong,
+#approach .integrated-flow .horizontal-flow code,
+#approach .integrated-flow .flow-tools li,
+#approach .integrated-flow .flow-bridge-row code,
+#approach .integrated-flow .flow-handshake>span{color:var(--workflow-film-ink)}
+#approach .integrated-flow .flow-tool-groups .flow-tools li{color:var(--workflow-tools-ink,#6cdae5)}
+
+/* Text links share the buttons' inherited 24-second gradient cycle. */
+body a.mood-link:not(.button){color:var(--mood-a)}
+@supports (background-clip:text){
+ body a.mood-link:not(.button){background-image:linear-gradient(115deg,var(--mood-a),var(--mood-b));background-clip:text;-webkit-background-clip:text;color:transparent}
+}
+@media(forced-colors:active){body a.mood-link:not(.button){background:none;color:LinkText}}
