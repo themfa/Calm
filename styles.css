@@ -355,7 +355,7 @@ header{padding:12px 0;min-height:68px}
 /* Editorial grouping: work leads; supporting systems stay close to the artifact. */
 .hero { padding:32px 0 40px; }
 .hero-film { inset:0 -24px; }
-.hero-film video { object-position:70% center; }
+.hero-film video { object-position:center; }
 .hero-film::after { background:linear-gradient(to bottom,transparent 55%,#000 100%),linear-gradient(to right,rgba(0,0,0,.85),rgba(0,0,0,.6) 56%,rgba(0,0,0,.3)); }
 .hero .calm-logo { width:200px; margin-bottom:24px; }
 .hero .hero-name { margin-bottom:12px; }
@@ -591,7 +591,7 @@ main>.prototype-section.full-band { width:100%; max-width:none; padding:64px max
 /* Editorial hierarchy: wide atmosphere, compact proof, focused reading. */
 .hero .hero-story { max-width:550px; }
 .hero .hero-story .intro { font-size:19px; line-height:1.55; }
-.hero-film video { object-position:76% center; }
+.hero-film video { object-position:center; }
 main>.mobile-ai-section { width:min(1120px,calc(100% - 64px)); padding-block:80px; }
 .mobile-ai-section .section-head { max-width:660px; margin-bottom:48px; }
 .jane-feature { grid-template-columns:minmax(0,1fr) minmax(0,.85fr); align-items:center; }

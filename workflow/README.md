@@ -26,17 +26,19 @@ After creating the Git baseline, import this repository in Conductor, create a w
 A successful check means the isolated workspace installs dependencies and serves this page on its assigned port. Configuration on disk is not evidence that this has happened.
 
 ## GitHub and CI
-The local GitHub CLI reported an invalid saved login during setup. Reauthenticate with `gh auth login --hostname github.com --web` in your own terminal.
-Choose a repository before creating a remote. Once published, .github/workflows/quality.yml runs install, static checks, build, and browser checks on pull requests and pushes to main.
+GitHub authentication is verified. The local origin is https://github.com/themfa/Calm.git and the published default branch is main. The earlier login error came from restricted network access; reauthentication is not required.
+The Quality workflow is active in GitHub Actions. Runs for commits 59976c5 and 549750e completed successfully. .github/workflows/quality.yml runs install, static checks, build, and browser checks on pull requests and pushes to main.
 Do not put account tokens in Markdown or commit .env files.
 
 ## v0
 Sign in at https://v0.app and use v0-brief.md with the relevant token excerpt and component reference. Review the draft, then bring the selected files into the feature branch through supported export or GitHub integration. No unverified v0 CLI command is assumed.
-Confirm completion by running the imported component locally and verifying the acceptance criteria. No v0 connection has been tested yet.
+The signed-in workspace successfully imported themfa/Calm: https://v0.app/themfas-projects/chat/new-chat-CfrAHu9XXpZ. Repository import is verified; generation, push-back, and deployment have not been tested. Confirm each component handoff by running the imported component locally and checking its acceptance criteria.
 
 ## Devin
 Sign in at https://app.devin.ai, connect the chosen repository, and configure a repository environment with Node 22+, npm ci, and the Chromium browser install above. Send devin-qa.md with an exact commit and reachable preview or startup instructions.
-Return findings with screenshots/recordings and the tested commit. No Devin connection has been tested yet.
+Devin sign-in and GitHub repository access are verified. themfa/Calm is included in the environment. Its saved blueprint installs Node 22, runs npm ci, installs Playwright Chromium with system dependencies, and supplies preview and verification commands. A snapshot build has started; cloud QA execution is not yet verified.
+Environment: https://app.devin.ai/org/mr-banks-a5ddee390abb44baa24fcfe8f6e85133/settings/environment
+Return findings with screenshots/recordings and the tested commit.
 
 ## Official references
 - https://nextjs.org/docs/app/getting-started/installation
