@@ -6,8 +6,14 @@ test('public Jane prototype loads and starts inside the page', async ({ page }) 
   await iframe.scrollIntoViewIfNeeded();
   const jane = page.frameLocator('.jane-live iframe');
   const continueButton = jane.getByRole('button', { name: 'Continue', exact: true });
+  const loginButton = jane.getByRole('button', { name: 'Login', exact: true });
   await expect(continueButton).toBeVisible({ timeout: 30000 });
-  await expect(jane.getByRole('button', { name: 'Login', exact: true })).toBeVisible();
-  await continueButton.click({ force: true });
-  await expect(jane.getByRole('button', { name: 'Login', exact: true })).toBeHidden();
+  await expect(loginButton).toBeVisible();
+  // Native click reaches React even when the Three.js canvas intercepts pointer
+  // events, and unlike force-click it does not skip scrolling the short mobile viewport.
+  await continueButton.evaluate((node) => {
+    node.scrollIntoView({ block: 'center', inline: 'nearest' });
+    if (node instanceof HTMLElement) node.click();
+  });
+  await expect(loginButton).toBeHidden({ timeout: 10000 });
 });
